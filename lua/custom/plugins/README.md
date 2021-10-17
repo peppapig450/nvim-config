@@ -36,7 +36,7 @@ npm i -g vscode-langservers-extracted
 
 https://github.com/hrsh7th/vscode-langservers-extracted
 
-- Language server for html 
+- Language server for html
 
 `vscode-html-language-server` can be installed via `npm`:
 
@@ -64,4 +64,51 @@ https://github.com/theia-ide/typescript-language-server
 
 ```sh
 npm i -g typescript typescript-language-server
+```
+
+### sumneko_lua
+
+https://github.com/sumneko/lua-language-server
+
+`lua-language-server` has to be built from source
+
+  **Building it:**
+> Note: I will probably write a script for this later.
+
+1. Install [ninja](https://github.com/ninja-build/ninja/wiki)
+2. Make sure you have C++17
+3. Clone project
+```sh
+cd /tmp
+# cloning project
+git clone https://github.com/sumneko/lua-language-server
+cd lua-language-server
+git submodule update --init --recursive
+```
+4. Build
++ `Linux`:
+```shell
+cd 3rd/luamake
+./compile/install.sh
+cd ../..
+./3rd/luamake/luamake rebuild
+```
+
++ `macOS`:
+```shell
+cd 3rd/luamake
+compile/install.sh
+cd ../..
+./3rd/luamake/luamake rebuild
+```
+
+5. Run/Finalize
++ `Linux`:
+```shell
+# move the compiled language-server
+mkdir -p ~/.lsps
+cd /tmp
+mv lua-language-server ~/.lsps
+# to execute it 
+./bin/Linux/lua-language-server
 ```
