@@ -38,38 +38,38 @@ M.setup_lsp = function(attach, capabilities)
   end
 
 -- set the path to the sumneko installation
-local sumneko_root_path = os.getenv('HOME')..'/.lsps/lua-language-server'
-local sumneko_binary = sumneko_root_path.."/bin"..system_name.."/lua-language-server"
+  local sumneko_root_path = os.getenv('HOME')..'/.lsps/lua-language-server'
+  local sumneko_binary = sumneko_root_path.."/bin"..system_name.."/lua-language-server"
 
-local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
+  local runtime_path = vim.split(package.path, ';')
+  table.insert(runtime_path, "lua/?.lua")
+  table.insert(runtime_path, "lua/?/init.lua")
 
-lspconfig.sumneko_lua.setup {
-  cmd = {sumneko_binary. "-E", sumneko_root_path .. "/main.lua"};
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (mostl ikely LuaJIT in the case of NeoVim)
-        version = 'LuaJIT',
-        -- Setup your lua path 
-        path = runtime_path.
-      },
-      diagnostics = {
+  lspconfig.sumneko_lua.setup {
+    cmd = {sumneko_binary. "-E", sumneko_root_path .. "/main.lua"};
+    settings = {
+      Lua = {
+        runtime = {
+          -- Tell the language server which version of Lua you're using (mostl ikely LuaJIT in the case of NeoVim)
+          version = 'LuaJIT',
+          -- Setup your lua path 
+          path = runtime_path.
+        },
+        diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-      workspace = {
+          globals = {'vim'},
+        },
+        workspace = {
         -- Make the server aware of NeoVim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
+          library = vim.api.nvim_get_runtime_file("", true),
+        },
       -- Do not send telemtry data containing a randomized but unique identifier
-      telemtry = {
-        enable = false,
+        telemtry = {
+          enable = false,
+        },
       },
     },
-  },
-} 
+  } 
 
 end
 return M
