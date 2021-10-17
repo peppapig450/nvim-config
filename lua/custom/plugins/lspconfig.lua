@@ -53,7 +53,7 @@ M.setup_lsp = function(attach, capabilities)
           -- Tell the language server which version of Lua you're using (mostl ikely LuaJIT in the case of NeoVim)
           version = 'LuaJIT',
           -- Setup your lua path 
-          path = runtime_path.
+          path = runtime_path,
         },
         diagnostics = {
         -- Get the language server to recognize the `vim` global
