@@ -1,9 +1,9 @@
 # Installing Language Servers
 
-How to install the LSPS used in my configuration.
+**How to install the LSPS used in my configuration.**
 
-> Documentation for NeoVim's language server protocol as well as additional information about defaults, more langauge servers, etc. 
-[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md)
+- [Documentation](https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md) for NeoVim's language server protocol as well as additional information about defaults, more langauge servers, etc. 
+
 
 
 ### bashls
