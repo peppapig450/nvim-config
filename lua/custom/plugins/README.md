@@ -60,7 +60,7 @@ npm i -g pyright
 
 https://github.com/theia-ide/typescript-language-server
 
-`typescript-language-server` depends on `typescript`. Both packages can be installed via `npm`:
+- `typescript-language-server` depends on `typescript`. Both packages can be installed via `npm`:
 
 ```sh
 npm i -g typescript typescript-language-server
