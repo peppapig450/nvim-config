@@ -112,3 +112,12 @@ mv lua-language-server ~/.lsps
 # to execute it 
 ./bin/Linux/lua-language-server
 ```
++ `macOS`:
+```shell
+# move the compiled language-server
+mkdir -p ~/.lsps
+cd /tmp
+mv lua-language-server ~/.lsps 
+# to execute it
+./bin/macOS/lua-language-server
+```
