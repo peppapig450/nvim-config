@@ -39,7 +39,7 @@ M.setup_lsp = function(attach, capabilities)
 
 -- set the path to the sumneko installation
   local sumneko_root_path = os.getenv('HOME')..'/.lsps/lua-language-server'
-  local sumneko_binary = sumneko_root_path.."/bin"..system_name.."/lua-language-server"
+  local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
 
   local runtime_path = vim.split(package.path, ';')
   table.insert(runtime_path, "lua/?.lua")
@@ -52,7 +52,7 @@ M.setup_lsp = function(attach, capabilities)
         runtime = {
           -- Tell the language server which version of Lua you're using (mostl ikely LuaJIT in the case of NeoVim)
           version = 'LuaJIT',
-          -- Setup your lua path 
+          -- Setup your lua path
           path = runtime_path,
         },
         diagnostics = {
@@ -69,7 +69,7 @@ M.setup_lsp = function(attach, capabilities)
         },
       },
     },
-  } 
+  }
 
 end
 return M
