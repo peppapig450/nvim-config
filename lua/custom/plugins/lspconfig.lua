@@ -64,7 +64,7 @@ M.setup_lsp = function(attach, capabilities)
           library = vim.api.nvim_get_runtime_file("", true),
         },
       -- Do not send telemtry data containing a randomized but unique identifier
-        telemtry = {
+        telemetry = {
           enable = false,
         },
       },
